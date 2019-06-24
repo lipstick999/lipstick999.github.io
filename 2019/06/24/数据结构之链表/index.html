@@ -75,7 +75,7 @@
 
 
 
-  <meta name="keywords" content="动态数组,java,面试题,">
+  <meta name="keywords" content="java,面试题,链表,">
 
 
 
@@ -86,18 +86,18 @@
 
 
 
-<meta name="description" content="动态数组数组的特点优点：  按照索引查询数据元素速度快 能存储大量数据 按照索引遍历数组方便  缺点：  根据内容查找元素速度慢 数组的大小一经确定不能改变（数组的局限性） 数组只能存储一种类型的数据 增加，删除元素效率慢 未封装任何方法，所有操作都需要用户自己定义  12345678910111213141516171819202122232425262728293031public class">
-<meta name="keywords" content="动态数组,java,面试题">
+<meta name="description" content="链表什么是单链表单链表是一种链式存取的数据结构，用一组地址任意的存储单元存放线性表中的元素。它的数据是以结点来表示的，每个结点的构成：数据（类型为要存储的数据的类型） + 指针，数据就是链表里具体要存储的东西，指针就是用来把每个节点都连接起来，使它们形成一个链状。 单链表的结构1234567891011121314151617181920212223242526272829303132333435">
+<meta name="keywords" content="java,面试题,链表">
 <meta property="og:type" content="article">
-<meta property="og:title" content="数据结构之动态数组">
-<meta property="og:url" content="http://yoursite.com/2019/06/24/数据结构之动态数组/index.html">
+<meta property="og:title" content="数据结构之链表">
+<meta property="og:url" content="http://yoursite.com/2019/06/24/数据结构之链表/index.html">
 <meta property="og:site_name" content="Lipstick">
-<meta property="og:description" content="动态数组数组的特点优点：  按照索引查询数据元素速度快 能存储大量数据 按照索引遍历数组方便  缺点：  根据内容查找元素速度慢 数组的大小一经确定不能改变（数组的局限性） 数组只能存储一种类型的数据 增加，删除元素效率慢 未封装任何方法，所有操作都需要用户自己定义  12345678910111213141516171819202122232425262728293031public class">
+<meta property="og:description" content="链表什么是单链表单链表是一种链式存取的数据结构，用一组地址任意的存储单元存放线性表中的元素。它的数据是以结点来表示的，每个结点的构成：数据（类型为要存储的数据的类型） + 指针，数据就是链表里具体要存储的东西，指针就是用来把每个节点都连接起来，使它们形成一个链状。 单链表的结构1234567891011121314151617181920212223242526272829303132333435">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-06-24T07:12:46.104Z">
+<meta property="og:updated_time" content="2019-06-24T08:28:37.386Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="数据结构之动态数组">
-<meta name="twitter:description" content="动态数组数组的特点优点：  按照索引查询数据元素速度快 能存储大量数据 按照索引遍历数组方便  缺点：  根据内容查找元素速度慢 数组的大小一经确定不能改变（数组的局限性） 数组只能存储一种类型的数据 增加，删除元素效率慢 未封装任何方法，所有操作都需要用户自己定义  12345678910111213141516171819202122232425262728293031public class">
+<meta name="twitter:title" content="数据结构之链表">
+<meta name="twitter:description" content="链表什么是单链表单链表是一种链式存取的数据结构，用一组地址任意的存储单元存放线性表中的元素。它的数据是以结点来表示的，每个结点的构成：数据（类型为要存储的数据的类型） + 指针，数据就是链表里具体要存储的东西，指针就是用来把每个节点都连接起来，使它们形成一个链状。 单链表的结构1234567891011121314151617181920212223242526272829303132333435">
 
 
 
@@ -127,13 +127,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2019/06/24/数据结构之动态数组/">
+  <link rel="canonical" href="http://yoursite.com/2019/06/24/数据结构之链表/">
 
 
 
 
 
-  <title>数据结构之动态数组 | Lipstick</title>
+  <title>数据结构之链表 | Lipstick</title>
   
 
 
@@ -294,7 +294,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/06/24/数据结构之动态数组/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/06/24/数据结构之链表/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Lipstick">
@@ -311,7 +311,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">数据结构之动态数组</h1>
+          <h1 class="post-title" itemprop="name headline">数据结构之链表</h1>
         
 
         <div class="post-meta">
@@ -323,7 +323,7 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-06-24T12:25:52+08:00">
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-06-24T15:32:59+08:00">
                 2019-06-24
               </time>
             
@@ -364,8 +364,8 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2019/06/24/数据结构之动态数组/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count gitment-comments-count" data-xid="/2019/06/24/数据结构之动态数组/" itemprop="commentsCount"></span>
+                <a href="/2019/06/24/数据结构之链表/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count gitment-comments-count" data-xid="/2019/06/24/数据结构之链表/" itemprop="commentsCount"></span>
                 </a>
               </span>
             
@@ -392,7 +392,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  1.4k
+                  1.1k
                 </span>
               
 
@@ -408,7 +408,7 @@
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  6
+                  4
                 </span>
               
             </div>
@@ -429,79 +429,52 @@
       
 
       
-        <h3 id="动态数组"><a href="#动态数组" class="headerlink" title="动态数组"></a>动态数组</h3><h4 id="数组的特点"><a href="#数组的特点" class="headerlink" title="数组的特点"></a>数组的特点</h4><p><strong>优点</strong>：</p>
+        <h3 id="链表"><a href="#链表" class="headerlink" title="链表"></a>链表</h3><h4 id="什么是单链表"><a href="#什么是单链表" class="headerlink" title="什么是单链表"></a>什么是单链表</h4><p>单链表是一种链式存取的数据结构，用一组地址任意的存储单元存放线性表中的元素。它的数据是以结点来表示的，每个结点的构成：数据（类型为要存储的数据的类型） + 指针，数据就是链表里具体要存储的东西，指针就是用来把每个节点都连接起来，使它们形成一个链状。</p>
+<h4 id="单链表的结构"><a href="#单链表的结构" class="headerlink" title="单链表的结构"></a>单链表的结构</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">LinkedList</span>&lt;<span class="title">E</span>&gt; </span>&#123;</span><br><span class="line">	<span class="comment">//数据存储在节点中（内部类）</span></span><br><span class="line">    <span class="keyword">private</span> <span class="class"><span class="keyword">class</span> <span class="title">Node</span></span>&#123;</span><br><span class="line">        <span class="keyword">public</span> E e;</span><br><span class="line">        <span class="keyword">public</span> Node next;</span><br><span class="line"></span><br><span class="line">        <span class="function"><span class="keyword">public</span> <span class="title">Node</span><span class="params">(E e, Node next)</span></span>&#123;</span><br><span class="line">            <span class="keyword">this</span>.e = e;</span><br><span class="line">            <span class="keyword">this</span>.next = next;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="function"><span class="keyword">public</span> <span class="title">Node</span><span class="params">(E e)</span></span>&#123;</span><br><span class="line">            <span class="keyword">this</span>(e, <span class="keyword">null</span>);</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="function"><span class="keyword">public</span> <span class="title">Node</span><span class="params">()</span></span>&#123;</span><br><span class="line">            <span class="keyword">this</span>(<span class="keyword">null</span>, <span class="keyword">null</span>);</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="meta">@Override</span></span><br><span class="line">        <span class="function"><span class="keyword">public</span> String <span class="title">toString</span><span class="params">()</span></span>&#123;</span><br><span class="line">            <span class="keyword">return</span> e.toString();</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">	<span class="comment">//这里用的是虚拟头节点，不存储数据，便于操作在头部删除和添加元素</span></span><br><span class="line">    <span class="keyword">private</span> Node dummyHead;</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">int</span> size;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">LinkedList</span><span class="params">()</span></span>&#123;</span><br><span class="line">        dummyHead = <span class="keyword">new</span> Node();</span><br><span class="line">        size = <span class="number">0</span>;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 获取链表中的元素个数</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">getSize</span><span class="params">()</span></span>&#123;</span><br><span class="line">        <span class="keyword">return</span> size;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 返回链表是否为空</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">isEmpty</span><span class="params">()</span></span>&#123;</span><br><span class="line">        <span class="keyword">return</span> size == <span class="number">0</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h4 id="单链表的常用操作"><a href="#单链表的常用操作" class="headerlink" title="单链表的常用操作"></a>单链表的常用操作</h4><h5 id="添加元素操作"><a href="#添加元素操作" class="headerlink" title="添加元素操作"></a>添加元素操作</h5><p>思想：找到要添加节点的前一个节点</p>
+<p>Node node = new Node(e,null);</p>
+<p>node.next = prev.next;</p>
+<p>prev.next = node;</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 在链表的index(0-based)位置添加新的元素e</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">add</span><span class="params">(<span class="keyword">int</span> index, E e)</span></span>&#123;</span><br><span class="line"></span><br><span class="line">	<span class="keyword">if</span>(index &lt; <span class="number">0</span> || index &gt; size)</span><br><span class="line">		<span class="keyword">throw</span> <span class="keyword">new</span> IllegalArgumentException(<span class="string">"Add failed. Illegal index."</span>);</span><br><span class="line"></span><br><span class="line">	Node prev = dummyHead;</span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span> ; i &lt; index ; i ++)</span><br><span class="line">		prev = prev.next;</span><br><span class="line"></span><br><span class="line">	prev.next = <span class="keyword">new</span> Node(e, prev.next);</span><br><span class="line">	size ++;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 在链表头添加新的元素e</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">addFirst</span><span class="params">(E e)</span></span>&#123;</span><br><span class="line">	add(<span class="number">0</span>, e);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 在链表末尾添加新的元素e</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">addLast</span><span class="params">(E e)</span></span>&#123;</span><br><span class="line">	add(size, e);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h5 id="查询元素操作"><a href="#查询元素操作" class="headerlink" title="查询元素操作"></a>查询元素操作</h5><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 获得链表的第index(0-based)个位置的元素</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> E <span class="title">get</span><span class="params">(<span class="keyword">int</span> index)</span></span>&#123;</span><br><span class="line"></span><br><span class="line">	<span class="keyword">if</span>(index &lt; <span class="number">0</span> || index &gt;= size)</span><br><span class="line">		<span class="keyword">throw</span> <span class="keyword">new</span> IllegalArgumentException(<span class="string">"Get failed. Illegal index."</span>);</span><br><span class="line"></span><br><span class="line">	Node cur = dummyHead.next;</span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span> ; i &lt; index ; i ++)</span><br><span class="line">		cur = cur.next;</span><br><span class="line">	<span class="keyword">return</span> cur.e;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 获得链表的第一个元素</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> E <span class="title">getFirst</span><span class="params">()</span></span>&#123;</span><br><span class="line">	<span class="keyword">return</span> get(<span class="number">0</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 获得链表的最后一个元素</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> E <span class="title">getLast</span><span class="params">()</span></span>&#123;</span><br><span class="line">	<span class="keyword">return</span> get(size - <span class="number">1</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 查找链表中是否有元素e</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">contains</span><span class="params">(E e)</span></span>&#123;</span><br><span class="line">	Node cur = dummyHead.next;</span><br><span class="line">	<span class="keyword">while</span>(cur != <span class="keyword">null</span>)&#123;</span><br><span class="line">		<span class="keyword">if</span>(cur.e.equals(e))</span><br><span class="line">			<span class="keyword">return</span> <span class="keyword">true</span>;</span><br><span class="line">		cur = cur.next;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> <span class="keyword">false</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h5 id="修改元素操作"><a href="#修改元素操作" class="headerlink" title="修改元素操作"></a>修改元素操作</h5><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 修改链表的第index(0-based)个位置的元素为e</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">set</span><span class="params">(<span class="keyword">int</span> index, E e)</span></span>&#123;</span><br><span class="line">	<span class="keyword">if</span>(index &lt; <span class="number">0</span> || index &gt;= size)</span><br><span class="line">		<span class="keyword">throw</span> <span class="keyword">new</span> IllegalArgumentException(<span class="string">"Set failed. Illegal index."</span>);</span><br><span class="line"></span><br><span class="line">	Node cur = dummyHead.next;</span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span> ; i &lt; index ; i ++)</span><br><span class="line">		cur = cur.next;</span><br><span class="line">	cur.e = e;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h5 id="删除元素操作"><a href="#删除元素操作" class="headerlink" title="删除元素操作"></a>删除元素操作</h5><p>思想：找到要删除的节点的前一个节点</p>
+<p>Node delNode = prev.next;</p>
+<p>prev.next = delNode.next</p>
+<p>delNode.next = null</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 从链表中删除index(0-based)位置的元素, 返回删除的元素</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> E <span class="title">remove</span><span class="params">(<span class="keyword">int</span> index)</span></span>&#123;</span><br><span class="line">	<span class="keyword">if</span>(index &lt; <span class="number">0</span> || index &gt;= size)</span><br><span class="line">		<span class="keyword">throw</span> <span class="keyword">new</span> IllegalArgumentException(<span class="string">"Remove failed. Index is illegal."</span>);</span><br><span class="line"></span><br><span class="line">	Node prev = dummyHead;</span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span> ; i &lt; index ; i ++)</span><br><span class="line">		prev = prev.next;</span><br><span class="line"></span><br><span class="line">	Node retNode = prev.next;</span><br><span class="line">	prev.next = retNode.next;</span><br><span class="line">	retNode.next = <span class="keyword">null</span>;</span><br><span class="line">	size --;</span><br><span class="line"></span><br><span class="line">	<span class="keyword">return</span> retNode.e;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 从链表中删除第一个元素, 返回删除的元素</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> E <span class="title">removeFirst</span><span class="params">()</span></span>&#123;</span><br><span class="line">	<span class="keyword">return</span> remove(<span class="number">0</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 从链表中删除最后一个元素, 返回删除的元素</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> E <span class="title">removeLast</span><span class="params">()</span></span>&#123;</span><br><span class="line">	<span class="keyword">return</span> remove(size - <span class="number">1</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 从链表中删除元素e</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">removeElement</span><span class="params">(E e)</span></span>&#123;</span><br><span class="line"></span><br><span class="line">	Node prev = dummyHead;</span><br><span class="line">	<span class="keyword">while</span>(prev.next != <span class="keyword">null</span>)&#123;</span><br><span class="line">		<span class="keyword">if</span>(prev.next.e.equals(e))</span><br><span class="line">			<span class="keyword">break</span>;</span><br><span class="line">		prev = prev.next;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="keyword">if</span>(prev.next != <span class="keyword">null</span>)&#123;</span><br><span class="line">		Node delNode = prev.next;</span><br><span class="line">		prev.next = delNode.next;</span><br><span class="line">		delNode.next = <span class="keyword">null</span>;</span><br><span class="line">		size --;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h4 id="单链表的时间复杂度分析"><a href="#单链表的时间复杂度分析" class="headerlink" title="单链表的时间复杂度分析"></a>单链表的时间复杂度分析</h4><p>添加操作：O(n)</p>
 <ul>
-<li>按照索引查询数据元素速度快</li>
-<li>能存储大量数据</li>
-<li>按照索引遍历数组方便</li>
-</ul>
-<p><strong>缺点：</strong></p>
-<ul>
-<li>根据内容查找元素速度慢</li>
-<li>数组的大小一经确定不能改变（数组的局限性）</li>
-<li>数组只能存储一种类型的数据</li>
-<li>增加，删除元素效率慢</li>
-<li>未封装任何方法，所有操作都需要用户自己定义</li>
-</ul>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Array</span>&lt;<span class="title">E</span>&gt; </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">private</span> E[] data;</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">int</span> size;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 构造函数，传入数组的容量capacity构造Array</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">Array</span><span class="params">(<span class="keyword">int</span> capacity)</span></span>&#123;</span><br><span class="line">        data = (E[])<span class="keyword">new</span> Object[capacity];</span><br><span class="line">        size = <span class="number">0</span>;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 无参数的构造函数，默认数组的容量capacity=10</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">Array</span><span class="params">()</span></span>&#123;</span><br><span class="line">        <span class="keyword">this</span>(<span class="number">10</span>);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 获取数组的容量</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">getCapacity</span><span class="params">()</span></span>&#123;</span><br><span class="line">        <span class="keyword">return</span> data.length;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 获取数组中的元素个数</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">getSize</span><span class="params">()</span></span>&#123;</span><br><span class="line">        <span class="keyword">return</span> size;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 返回数组是否为空</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">isEmpty</span><span class="params">()</span></span>&#123;</span><br><span class="line">        <span class="keyword">return</span> size == <span class="number">0</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h4 id="动态数组-1"><a href="#动态数组-1" class="headerlink" title="动态数组"></a>动态数组</h4><p>使得数组的容量是可以伸缩的。</p>
-<p>实现动态数组的思路</p>
-<ul>
-<li>定义一个新的容量newCapacity，以新容量开辟一个新数组newData</li>
-<li>遍历原数组data的元素，赋值到新数组newData中</li>
-<li>将原数组的指针指向新数组</li>
-</ul>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 将数组空间的容量变成newCapacity大小</span></span><br><span class="line"><span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">resize</span><span class="params">(<span class="keyword">int</span> newCapacity)</span></span>&#123;</span><br><span class="line"></span><br><span class="line">E[] newData = (E[])<span class="keyword">new</span> Object[newCapacity];</span><br><span class="line"><span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span> ; i &lt; size ; i ++)</span><br><span class="line">	newData[i] = data[i];</span><br><span class="line">	data = newData;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h4 id="动态数组的常见操作"><a href="#动态数组的常见操作" class="headerlink" title="动态数组的常见操作"></a>动态数组的常见操作</h4><h5 id="添加元素操作"><a href="#添加元素操作" class="headerlink" title="添加元素操作"></a>添加元素操作</h5><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 在index索引的位置插入一个新元素e</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">add</span><span class="params">(<span class="keyword">int</span> index, E e)</span></span>&#123;</span><br><span class="line"></span><br><span class="line">	<span class="keyword">if</span>(index &lt; <span class="number">0</span> || index &gt; size)</span><br><span class="line">		<span class="keyword">throw</span> <span class="keyword">new</span> IllegalArgumentException(<span class="string">"Add failed. Require index &gt;= 0 and index &lt;= size."</span>);</span><br><span class="line"></span><br><span class="line">	<span class="keyword">if</span>(size == data.length)</span><br><span class="line">		resize(<span class="number">2</span> * data.length);<span class="comment">//扩充数组的容量</span></span><br><span class="line"></span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i = size - <span class="number">1</span>; i &gt;= index ; i --)</span><br><span class="line">		data[i + <span class="number">1</span>] = data[i];</span><br><span class="line"></span><br><span class="line">	data[index] = e;</span><br><span class="line"></span><br><span class="line">	size ++;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 向所有元素后添加一个新元素</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">addLast</span><span class="params">(E e)</span></span>&#123;</span><br><span class="line">	add(size, e);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 在所有元素前添加一个新元素</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">addFirst</span><span class="params">(E e)</span></span>&#123;</span><br><span class="line">	add(<span class="number">0</span>, e);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h5 id="删除元素操作"><a href="#删除元素操作" class="headerlink" title="删除元素操作"></a>删除元素操作</h5><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 从数组中删除index位置的元素, 返回删除的元素</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> E <span class="title">remove</span><span class="params">(<span class="keyword">int</span> index)</span></span>&#123;</span><br><span class="line">	<span class="keyword">if</span>(index &lt; <span class="number">0</span> || index &gt;= size)</span><br><span class="line">		<span class="keyword">throw</span> <span class="keyword">new</span> IllegalArgumentException(<span class="string">"Remove failed. Index is illegal."</span>);</span><br><span class="line"></span><br><span class="line">	E ret = data[index];</span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i = index + <span class="number">1</span> ; i &lt; size ; i ++)</span><br><span class="line">		data[i - <span class="number">1</span>] = data[i];</span><br><span class="line">	size --;</span><br><span class="line">	data[size] = <span class="keyword">null</span>; <span class="comment">// loitering objects != memory leak</span></span><br><span class="line"></span><br><span class="line">	<span class="keyword">if</span>(size == data.length / <span class="number">4</span> &amp;&amp; data.length / <span class="number">2</span> != <span class="number">0</span>)<span class="comment">//为何要如此判断，下面有分析</span></span><br><span class="line">		resize(data.length / <span class="number">2</span>);</span><br><span class="line">	<span class="keyword">return</span> ret;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 从数组中删除第一个元素, 返回删除的元素</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> E <span class="title">removeFirst</span><span class="params">()</span></span>&#123;</span><br><span class="line">	<span class="keyword">return</span> remove(<span class="number">0</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 从数组中删除最后一个元素, 返回删除的元素</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> E <span class="title">removeLast</span><span class="params">()</span></span>&#123;</span><br><span class="line">	<span class="keyword">return</span> remove(size - <span class="number">1</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 从数组中删除元素e</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">removeElement</span><span class="params">(E e)</span></span>&#123;</span><br><span class="line">	<span class="keyword">int</span> index = find(e);</span><br><span class="line">	<span class="keyword">if</span>(index != -<span class="number">1</span>)</span><br><span class="line">		remove(index);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h5 id="更改元素操作"><a href="#更改元素操作" class="headerlink" title="更改元素操作"></a>更改元素操作</h5><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 修改index索引位置的元素为e</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">set</span><span class="params">(<span class="keyword">int</span> index, E e)</span></span>&#123;</span><br><span class="line">	<span class="keyword">if</span>(index &lt; <span class="number">0</span> || index &gt;= size)</span><br><span class="line">		<span class="keyword">throw</span> <span class="keyword">new</span> IllegalArgumentException(<span class="string">"Set failed. Index is illegal."</span>);</span><br><span class="line">	data[index] = e;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h5 id="查询元素操作"><a href="#查询元素操作" class="headerlink" title="查询元素操作"></a>查询元素操作</h5><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 获取index索引位置的元素</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> E <span class="title">get</span><span class="params">(<span class="keyword">int</span> index)</span></span>&#123;</span><br><span class="line">	<span class="keyword">if</span>(index &lt; <span class="number">0</span> || index &gt;= size)</span><br><span class="line">		<span class="keyword">throw</span> <span class="keyword">new</span> IllegalArgumentException(<span class="string">"Get failed. Index is illegal."</span>);</span><br><span class="line">	<span class="keyword">return</span> data[index];</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 查找数组中是否有元素e</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">contains</span><span class="params">(E e)</span></span>&#123;</span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span> ; i &lt; size ; i ++)&#123;</span><br><span class="line">		<span class="keyword">if</span>(data[i].equals(e))</span><br><span class="line">			<span class="keyword">return</span> <span class="keyword">true</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> <span class="keyword">false</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 查找数组中元素e所在的索引，如果不存在元素e，则返回-1</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">find</span><span class="params">(E e)</span></span>&#123;</span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span> ; i &lt; size ; i ++)&#123;</span><br><span class="line">		<span class="keyword">if</span>(data[i].equals(e))</span><br><span class="line">			<span class="keyword">return</span> i;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> -<span class="number">1</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h4 id="动态数组时间复杂度分析"><a href="#动态数组时间复杂度分析" class="headerlink" title="动态数组时间复杂度分析"></a>动态数组时间复杂度分析</h4><p>添加元素操作：O(n)</p>
-<ul>
-<li>addLast(e)：O(1)</li>
-<li>addFirst(e)：O(n)</li>
+<li>addLast(e)：O(n)</li>
+<li>addFirst(e)：O(1)</li>
 <li>add(index,e)：O(n/2)</li>
 </ul>
-<p>删除元素操作：O(n)</p>
+<p>删除操作：O(n)</p>
 <ul>
-<li>removeLast(e)：O(1)</li>
-<li>removeFirst(e)：O(n)</li>
+<li>removeLast(e)：O(n)</li>
+<li>removeFirst(e)：O(1)</li>
 <li>remove(index,e)：O(n/2)</li>
 </ul>
-<p>修改元素操作：已知索引：O(1)；未知索引：O(n)</p>
+<p>修改操作：O(n)</p>
 <ul>
-<li>set(index,e)：O(1)</li>
+<li>set(index,e)：O(n)</li>
 </ul>
-<p>查找元素操作：已知索引O(1)；未知索引O(n)</p>
+<p>查找操作：O(n)</p>
 <ul>
-<li>get(index)：O(1)</li>
-<li>contains(e):：O(n)</li>
-<li>find(e)：O(n)</li>
+<li>get(index)：O(n)</li>
+<li>contains(e)：O(n)</li>
 </ul>
-<h4 id="resize-时间复杂度分析"><a href="#resize-时间复杂度分析" class="headerlink" title="resize()时间复杂度分析"></a>resize()时间复杂度分析</h4><ul>
-<li><p>resize()：O(n)</p>
-</li>
-<li><p>从均摊复杂度的角度看addLast操作和removeLast操作</p>
-<p>假设capacity=n，n+1次addLast，触发resize，而resize操作了n次，所以总共进行2n+1次基本操作，使用均摊复杂度均摊计算，每次addLast操作，进行2次基本操作，时间复杂度为O(1)。同理，我们看removeLast操作，均摊复杂度后的时间复杂度也为O(1).</p>
-</li>
-</ul>
-<h4 id="防止复杂度震荡"><a href="#防止复杂度震荡" class="headerlink" title="防止复杂度震荡"></a>防止复杂度震荡</h4><ul>
-<li><p>出现复杂度震荡的问题描述：</p>
-<p>假设现在我们有一个数组，容量是n，并且装满了元素。这时候，我想添加一个元素，显然是需要进行扩容，容量变为2n，耗时O(n)的时间。但是此时，我又删除了一个元素触发了缩容操作，耗时O(n)的时间。当我们每次触发缩容或扩容操作，都会耗费O(n)额复杂度，那么这便是复杂度的震荡。</p>
-</li>
-<li><p>分析原因：在特殊情况下，我们频繁的添加和删减操作，导致过于着急的去扩容或缩容。</p>
-</li>
-<li><p>解决方案：</p>
-<p>可以采用一种相对懒惰(Lazy机制)的策略。</p>
-<p>  比如说，一个满的数组，容量n，添加元素需要进行扩容，容量变为2n。但在这时，在进行删除元素后，不立即进行缩容操作，而是再等等。如果后面一直有删除操作的话，删除到整个数组容积的1/4，再触发缩容操作。缩容数组的1/2，而不是直接缩容到1/4。此时，数组中存在1/4的元素，还预留了1/4的空间。通过这样的策略，防止了复杂度的震荡，从而有效的提升整体的性能。</p>
-</li>
-</ul>
+<h4 id="数组和链表的比较"><a href="#数组和链表的比较" class="headerlink" title="数组和链表的比较"></a>数组和链表的比较</h4><h5 id="数组："><a href="#数组：" class="headerlink" title="数组："></a>数组：</h5><p>优点：使用方便，查询效率比链表高，内存为一连续的区域。</p>
+<p>缺点：大小固定，不适合动态存储，不方便动态添加。</p>
+<h5 id="动态数组"><a href="#动态数组" class="headerlink" title="动态数组"></a>动态数组</h5><p>优点：查找方便，适合随机查询。（查询快）</p>
+<p>缺点：插入，删除操作不方便，因为插入，删除操作会导致大量元素的移动。</p>
+<h5 id="链表-1"><a href="#链表-1" class="headerlink" title="链表"></a>链表</h5><p>优点：真正的动态，不需要处理固定容量的问题。插入，删除方便，不会导致元素的移动，因为元素增减，只需要调整指针。</p>
+<p>缺点：丧失了随机访问的能力（查询慢）</p>
 
       
     </div>
@@ -548,11 +521,11 @@
       
         <div class="post-tags">
           
-            <a href="/tags/动态数组/" rel="tag"># 动态数组</a>
-          
             <a href="/tags/java/" rel="tag"># java</a>
           
             <a href="/tags/面试题/" rel="tag"># 面试题</a>
+          
+            <a href="/tags/链表/" rel="tag"># 链表</a>
           
         </div>
       
@@ -565,15 +538,15 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
+              <a href="/2019/06/24/数据结构之动态数组/" rel="next" title="数据结构之动态数组">
+                <i class="fa fa-chevron-left"></i> 数据结构之动态数组
+              </a>
+            
           </div>
 
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2019/06/24/数据结构之链表/" rel="prev" title="数据结构之链表">
-                数据结构之链表 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -750,7 +723,7 @@ var jiathis_config={
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#动态数组"><span class="nav-number">1.</span> <span class="nav-text">动态数组</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#数组的特点"><span class="nav-number">1.1.</span> <span class="nav-text">数组的特点</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#动态数组-1"><span class="nav-number">1.2.</span> <span class="nav-text">动态数组</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#动态数组的常见操作"><span class="nav-number">1.3.</span> <span class="nav-text">动态数组的常见操作</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#添加元素操作"><span class="nav-number">1.3.1.</span> <span class="nav-text">添加元素操作</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#删除元素操作"><span class="nav-number">1.3.2.</span> <span class="nav-text">删除元素操作</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#更改元素操作"><span class="nav-number">1.3.3.</span> <span class="nav-text">更改元素操作</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#查询元素操作"><span class="nav-number">1.3.4.</span> <span class="nav-text">查询元素操作</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#动态数组时间复杂度分析"><span class="nav-number">1.4.</span> <span class="nav-text">动态数组时间复杂度分析</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#resize-时间复杂度分析"><span class="nav-number">1.5.</span> <span class="nav-text">resize()时间复杂度分析</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#防止复杂度震荡"><span class="nav-number">1.6.</span> <span class="nav-text">防止复杂度震荡</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#链表"><span class="nav-number">1.</span> <span class="nav-text">链表</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#什么是单链表"><span class="nav-number">1.1.</span> <span class="nav-text">什么是单链表</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#单链表的结构"><span class="nav-number">1.2.</span> <span class="nav-text">单链表的结构</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#单链表的常用操作"><span class="nav-number">1.3.</span> <span class="nav-text">单链表的常用操作</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#添加元素操作"><span class="nav-number">1.3.1.</span> <span class="nav-text">添加元素操作</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#查询元素操作"><span class="nav-number">1.3.2.</span> <span class="nav-text">查询元素操作</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#修改元素操作"><span class="nav-number">1.3.3.</span> <span class="nav-text">修改元素操作</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#删除元素操作"><span class="nav-number">1.3.4.</span> <span class="nav-text">删除元素操作</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#单链表的时间复杂度分析"><span class="nav-number">1.4.</span> <span class="nav-text">单链表的时间复杂度分析</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#数组和链表的比较"><span class="nav-number">1.5.</span> <span class="nav-text">数组和链表的比较</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#数组："><span class="nav-number">1.5.1.</span> <span class="nav-text">数组：</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#动态数组"><span class="nav-number">1.5.2.</span> <span class="nav-text">动态数组</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#链表-1"><span class="nav-number">1.5.3.</span> <span class="nav-text">链表</span></a></li></ol></li></ol></li></ol></div>
             
 
           </div>
