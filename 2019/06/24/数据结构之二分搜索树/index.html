@@ -1,0 +1,1375 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next gemini use-motion" lang="zh-Hans">
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="theme-color" content="#222">
+
+
+
+  
+  
+    
+    
+  <script src="/lib/pace/pace.min.js?v=1.0.2"></script>
+  <link href="/lib/pace/pace-theme-center-atom.min.css?v=1.0.2" rel="stylesheet">
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="java,面试题,二分搜索树,">
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="为什么要有树结构树结构本身是一种天然的组织结构。将数据使用数结构存储后，会很高效 二叉树特性：  二叉树和链表一样，是动态数据结构。 二叉树具有唯一根节点。每个节点最多有两个孩子，最多有一个父亲。 二叉树具有天然的递归结构。  满二叉树：在一棵二叉树中，如果所有分支节点都存在左子树和右子树，并且所有叶子节点都在同一层上。这样的二叉树称作满二叉树。 完全二叉树：如果一个具有n个节点的二叉树与满二叉树">
+<meta name="keywords" content="java,面试题,二分搜索树">
+<meta property="og:type" content="article">
+<meta property="og:title" content="数据结构之二分搜索树">
+<meta property="og:url" content="http://yoursite.com/2019/06/24/数据结构之二分搜索树/index.html">
+<meta property="og:site_name" content="Lipstick">
+<meta property="og:description" content="为什么要有树结构树结构本身是一种天然的组织结构。将数据使用数结构存储后，会很高效 二叉树特性：  二叉树和链表一样，是动态数据结构。 二叉树具有唯一根节点。每个节点最多有两个孩子，最多有一个父亲。 二叉树具有天然的递归结构。  满二叉树：在一棵二叉树中，如果所有分支节点都存在左子树和右子树，并且所有叶子节点都在同一层上。这样的二叉树称作满二叉树。 完全二叉树：如果一个具有n个节点的二叉树与满二叉树">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="http://yoursite.com/2019/06/24/数据结构之二分搜索树/bst_pic1.png">
+<meta property="og:updated_time" content="2019-06-24T10:59:04.078Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="数据结构之二分搜索树">
+<meta name="twitter:description" content="为什么要有树结构树结构本身是一种天然的组织结构。将数据使用数结构存储后，会很高效 二叉树特性：  二叉树和链表一样，是动态数据结构。 二叉树具有唯一根节点。每个节点最多有两个孩子，最多有一个父亲。 二叉树具有天然的递归结构。  满二叉树：在一棵二叉树中，如果所有分支节点都存在左子树和右子树，并且所有叶子节点都在同一层上。这样的二叉树称作满二叉树。 完全二叉树：如果一个具有n个节点的二叉树与满二叉树">
+<meta name="twitter:image" content="http://yoursite.com/2019/06/24/数据结构之二分搜索树/bst_pic1.png">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Gemini',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2019/06/24/数据结构之二分搜索树/">
+
+
+
+
+
+  <title>数据结构之二分搜索树 | Lipstick</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+    <!--给博客添加fork Github -->
+    <a href="https://github.com/lipstick999" class="github-corner" aria-label="View source on GitHub"><svg width="80" height="80" viewbox="0 0 250 250" style="fill:#151513; color:#fff; position: absolute; top: 0; border: 0; right: 0;" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"/><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"/><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"/></svg></a><style>.github-corner:hover .octo-arm{animation:octocat-wave 560ms ease-in-out}@keyframes octocat-wave{0%,100%{transform:rotate(0)}20%,60%{transform:rotate(-25deg)}40%,80%{transform:rotate(10deg)}}@media (max-width:500px){.github-corner:hover .octo-arm{animation:none}.github-corner .octo-arm{animation:octocat-wave 560ms ease-in-out}}</style>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Lipstick</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">个人博客</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br>
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            归档
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br>
+            
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off" placeholder="搜索..." spellcheck="false" type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/06/24/数据结构之二分搜索树/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Lipstick">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/picture.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Lipstick">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">数据结构之二分搜索树</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-06-24T16:43:59+08:00">
+                2019-06-24
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/数据结构/" itemprop="url" rel="index">
+                    <span itemprop="name">数据结构</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2019/06/24/数据结构之二分搜索树/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count gitment-comments-count" data-xid="/2019/06/24/数据结构之二分搜索树/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+            <span class="post-meta-divider">|</span>
+            <span class="page-pv">本文总阅读数 <i class="fa fa-file-o"></i>
+            <span class="busuanzi-value" id="busuanzi_value_page_pv"></span>次
+            </span>
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  2.9k
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  12
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h3 id="为什么要有树结构"><a href="#为什么要有树结构" class="headerlink" title="为什么要有树结构"></a>为什么要有树结构</h3><p>树结构本身是一种天然的组织结构。将数据使用数结构存储后，会很高效</p>
+<h3 id="二叉树"><a href="#二叉树" class="headerlink" title="二叉树"></a>二叉树</h3><p>特性：</p>
+<ol>
+<li>二叉树和链表一样，是动态数据结构。</li>
+<li>二叉树具有唯一根节点。每个节点最多有两个孩子，最多有一个父亲。</li>
+<li>二叉树具有天然的递归结构。</li>
+</ol>
+<p>满二叉树：在一棵二叉树中，如果所有分支节点都存在左子树和右子树，并且所有叶子节点都在同一层上。这样的二叉树称作满二叉树。</p>
+<p>完全二叉树：如果一个具有n个节点的二叉树与满二叉树的前n个节点的结构相同，这样的二叉树被称为完全二叉树。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Node</span></span>&#123;</span><br><span class="line">    E e;</span><br><span class="line">    Node left;<span class="comment">//左孩子</span></span><br><span class="line">    Node right;<span class="comment">//右孩子</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="二分搜索树BST"><a href="#二分搜索树BST" class="headerlink" title="二分搜索树BST"></a>二分搜索树BST</h3><h4 id="特性"><a href="#特性" class="headerlink" title="特性"></a>特性</h4><p>1）二分搜索树每个节点的值：大于左子树的所有节点的值；小于其右子树节点的值。</p>
+<p>2）每一棵子树也是二分搜索树</p>
+<p>3)）存储的元素必须有可比性</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//实现Compareble接口是为了让存储的元素具有可比性</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">BST</span>&lt;<span class="title">E</span> <span class="keyword">extends</span> <span class="title">Comparable</span>&lt;<span class="title">E</span>&gt;&gt; </span>&#123;</span><br><span class="line">    <span class="comment">//成员内部类</span></span><br><span class="line">    <span class="keyword">private</span> <span class="class"><span class="keyword">class</span> <span class="title">Node</span> </span>&#123;</span><br><span class="line">        <span class="keyword">public</span> E e;</span><br><span class="line">        <span class="keyword">public</span> Node left, right;</span><br><span class="line">        <span class="function"><span class="keyword">public</span> <span class="title">Node</span><span class="params">(E e)</span> </span>&#123;<span class="comment">//Node类初始化</span></span><br><span class="line">            <span class="keyword">this</span>.e = e;</span><br><span class="line">            left = <span class="keyword">null</span>;</span><br><span class="line">            right = <span class="keyword">null</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">//成员变量</span></span><br><span class="line">    <span class="keyword">private</span> Node root; <span class="comment">//根节点</span></span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">int</span> size; <span class="comment">//元素个数</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">BST</span><span class="params">()</span></span>&#123; <span class="comment">//BST初始化</span></span><br><span class="line">        root = <span class="keyword">null</span>;</span><br><span class="line">        size = <span class="number">0</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">//返回元素个数</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">size</span><span class="params">()</span></span>&#123;</span><br><span class="line">        <span class="keyword">return</span> size;</span><br><span class="line">    &#125;</span><br><span class="line">	<span class="comment">//判断BST是否为空</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">isEmpty</span><span class="params">()</span></span>&#123;</span><br><span class="line">        <span class="keyword">return</span> size == <span class="number">0</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h4 id="添加新元素"><a href="#添加新元素" class="headerlink" title="添加新元素"></a>添加新元素</h4><p>代码讲解的是不包含重复元素和采用递归的写法。</p>
+<p>如果想包含重复元素，只需定义左子树小于等于节点，或右子树大于等于节点。二分搜索树添加元素的非递归写法和链表很像。</p>
+<p>思想：从根节点开始找插入的位置，满足二叉搜索树的特性，比左子节点大，比右子节点小。</p>
+<p>步骤：</p>
+<ol>
+<li>从根节点开始，先比较当前节点，如果当前节点为null那么很明显就应该插入到这个节点。</li>
+<li>如果上面的节点不是null，那么和当前节点比较，如果小于节点就往左子树放，如果大于节点就往右子树放。</li>
+<li>然后分别对左子树或者右子树递归的递归进行如上1、2步骤的操作。</li>
+</ol>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 向二分搜索树中添加新的元素e</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">add</span><span class="params">(E e)</span></span>&#123;</span><br><span class="line">	<span class="keyword">if</span>(root == <span class="keyword">null</span>)&#123;</span><br><span class="line">		root = <span class="keyword">new</span> Node(e);</span><br><span class="line">		size ++;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">else</span></span><br><span class="line">		add(root, e);</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// 向以node为根的二分搜索树中插入元素e，递归算法</span></span><br><span class="line"><span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">add</span><span class="params">(Node node, E e)</span></span>&#123;</span><br><span class="line">    <span class="comment">//求解最基本问题</span></span><br><span class="line">	<span class="keyword">if</span>(e.equals(node.e))</span><br><span class="line">		<span class="keyword">return</span>;</span><br><span class="line">	<span class="keyword">else</span> <span class="keyword">if</span>(e.compareTo(node.e) &lt; <span class="number">0</span> &amp;&amp; node.left == <span class="keyword">null</span>)&#123;</span><br><span class="line">		node.left = <span class="keyword">new</span> Node(e);</span><br><span class="line">		size ++;</span><br><span class="line">		<span class="keyword">return</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">else</span> <span class="keyword">if</span>(e.compareTo(node.e) &gt; <span class="number">0</span> &amp;&amp; node.right == <span class="keyword">null</span>)&#123;</span><br><span class="line">		node.right = <span class="keyword">new</span> Node(e);</span><br><span class="line">		size ++;</span><br><span class="line">		<span class="keyword">return</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="comment">//把原问题转化为更小的问题</span></span><br><span class="line">	<span class="keyword">if</span>(e.compareTo(node.e) &lt; <span class="number">0</span>)</span><br><span class="line">		add(node.left, e);</span><br><span class="line">	<span class="keyword">else</span> <span class="comment">//e.compareTo(node.e) &gt; 0</span></span><br><span class="line">		add(node.right, e);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>添加元素java代码改进版：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 向二分搜索树中添加新的元素e</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">add</span><span class="params">(E e)</span></span>&#123;</span><br><span class="line">	root = add(root, e);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 向以node为根的二分搜索树中插入元素e，递归算法</span></span><br><span class="line"><span class="comment">// 返回插入新节点后二分搜索树的根</span></span><br><span class="line"><span class="function"><span class="keyword">private</span> Node <span class="title">add</span><span class="params">(Node node, E e)</span></span>&#123;</span><br><span class="line">    <span class="comment">//求解最基本问题</span></span><br><span class="line">	<span class="keyword">if</span>(node == <span class="keyword">null</span>)&#123;</span><br><span class="line">		size ++;</span><br><span class="line">		<span class="keyword">return</span> <span class="keyword">new</span> Node(e);</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="comment">//把原问题转化为更小的问题</span></span><br><span class="line">	<span class="keyword">if</span>(e.compareTo(node.e) &lt; <span class="number">0</span>)</span><br><span class="line">		node.left = add(node.left, e);</span><br><span class="line">	<span class="keyword">else</span> <span class="keyword">if</span>(e.compareTo(node.e) &gt; <span class="number">0</span>)</span><br><span class="line">		node.right = add(node.right, e);</span><br><span class="line">	<span class="keyword">return</span> node;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h4 id="查询元素"><a href="#查询元素" class="headerlink" title="查询元素"></a>查询元素</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 看二分搜索树中是否包含元素e</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">contains</span><span class="params">(E e)</span></span>&#123;</span><br><span class="line">	<span class="keyword">return</span> contains(root, e);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 看以node为根的二分搜索树中是否包含元素e, 递归算法</span></span><br><span class="line"><span class="function"><span class="keyword">private</span> <span class="keyword">boolean</span> <span class="title">contains</span><span class="params">(Node node, E e)</span></span>&#123;</span><br><span class="line">	<span class="comment">//求解最基本问题</span></span><br><span class="line">	<span class="keyword">if</span>(node == <span class="keyword">null</span>)</span><br><span class="line">		<span class="keyword">return</span> <span class="keyword">false</span>;</span><br><span class="line">	<span class="comment">//把原问题转化为更小的问题</span></span><br><span class="line">	<span class="keyword">if</span>(e.compareTo(node.e) == <span class="number">0</span>)</span><br><span class="line">		<span class="keyword">return</span> <span class="keyword">true</span>;</span><br><span class="line">	<span class="keyword">else</span> <span class="keyword">if</span>(e.compareTo(node.e) &lt; <span class="number">0</span>)</span><br><span class="line">		<span class="keyword">return</span> contains(node.left, e);</span><br><span class="line">	<span class="keyword">else</span> <span class="comment">// e.compareTo(node.e) &gt; 0</span></span><br><span class="line">		<span class="keyword">return</span> contains(node.right, e);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 寻找二分搜索树的最小元素</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> E <span class="title">minimum</span><span class="params">()</span></span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(size == <span class="number">0</span>)</span><br><span class="line">        <span class="keyword">throw</span> <span class="keyword">new</span> IllegalArgumentException(<span class="string">"BST is empty!"</span>);</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> minimum(root).e;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 返回以node为根的二分搜索树的最小值所在的节点</span></span><br><span class="line"><span class="function"><span class="keyword">private</span> Node <span class="title">minimum</span><span class="params">(Node node)</span></span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(node.left == <span class="keyword">null</span>)</span><br><span class="line">        <span class="keyword">return</span> node;</span><br><span class="line">    <span class="keyword">return</span> minimum(node.left);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 寻找二分搜索树的最大元素</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> E <span class="title">maximum</span><span class="params">()</span></span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(size == <span class="number">0</span>)</span><br><span class="line">        <span class="keyword">throw</span> <span class="keyword">new</span> IllegalArgumentException(<span class="string">"BST is empty"</span>);</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> maximum(root).e;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 返回以node为根的二分搜索树的最大值所在的节点</span></span><br><span class="line"><span class="function"><span class="keyword">private</span> Node <span class="title">maximum</span><span class="params">(Node node)</span></span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(node.right == <span class="keyword">null</span>)</span><br><span class="line">        <span class="keyword">return</span> node;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> maximum(node.right);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h4 id="遍历"><a href="#遍历" class="headerlink" title="遍历"></a>遍历</h4><p>遍历操作就是把所有节点都访问一遍(访问的原因和业务有关)，在线性结构下，遍历是极其简单的（for循环）。</p>
+<p>树结构的遍历操作，两棵子树都要顾及。</p>
+<h5 id="前序遍历："><a href="#前序遍历：" class="headerlink" title="前序遍历："></a>前序遍历：</h5><p>若二叉树为空，则算法结束，否则：1）访问根节点。2）前序遍历根节点的左子树。3）前序遍历根节点的右子树。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 二分搜索树的前序遍历</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">preOrder</span><span class="params">()</span></span>&#123;</span><br><span class="line">	preOrder(root);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 前序遍历以node为根的二分搜索树, 递归算法</span></span><br><span class="line"><span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">preOrder</span><span class="params">(Node node)</span></span>&#123;</span><br><span class="line">	<span class="keyword">if</span>(node == <span class="keyword">null</span>)</span><br><span class="line">		<span class="keyword">return</span>;</span><br><span class="line">    </span><br><span class="line">	System.out.println(node.e);</span><br><span class="line">	preOrder(node.left);</span><br><span class="line">	preOrder(node.right);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>非递归的二叉树前序遍历算法</p>
+<p>借助栈的数据结构来实现，步骤如下：</p>
+<p>1）把根节点入栈</p>
+<p>2）只要栈不为空，就依次把每个节点出栈</p>
+<ol>
+<li>若该节点的右子树非空，将该右子树的根节点入栈</li>
+<li>若该节点的左子树非空，将该左子树的根节点入栈</li>
+</ol>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 二分搜索树的非递归前序遍历</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">preOrderNR</span><span class="params">()</span></span>&#123;</span><br><span class="line"></span><br><span class="line">    Stack&lt;Node&gt; stack = <span class="keyword">new</span> Stack&lt;&gt;();</span><br><span class="line">    stack.push(root);</span><br><span class="line">    <span class="keyword">while</span>(!stack.isEmpty())&#123;</span><br><span class="line">        Node cur = stack.pop();</span><br><span class="line">        System.out.println(cur.e);</span><br><span class="line"></span><br><span class="line">        <span class="keyword">if</span>(cur.right != <span class="keyword">null</span>)</span><br><span class="line">            stack.push(cur.right);</span><br><span class="line">        <span class="keyword">if</span>(cur.left != <span class="keyword">null</span>)</span><br><span class="line">            stack.push(cur.left);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h5 id="中序遍历"><a href="#中序遍历" class="headerlink" title="中序遍历"></a>中序遍历</h5><p>若二叉树为空，则算法结束，否则：1）中序遍历根节点的左子树。2）访问根节点。3）中序遍历根节点的右子树。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 二分搜索树的中序遍历</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">inOrder</span><span class="params">()</span></span>&#123;</span><br><span class="line">	inOrder(root);</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// 中序遍历以node为根的二分搜索树, 递归算法</span></span><br><span class="line"><span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">inOrder</span><span class="params">(Node node)</span></span>&#123;</span><br><span class="line">	<span class="keyword">if</span>(node == <span class="keyword">null</span>)</span><br><span class="line">		<span class="keyword">return</span>;</span><br><span class="line">	inOrder(node.left);</span><br><span class="line">	System.out.println(node.e);</span><br><span class="line">	inOrder(node.right);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h5 id="后序遍历"><a href="#后序遍历" class="headerlink" title="后序遍历"></a>后序遍历</h5><p>若二叉树为空，则算法结束，否则：1）后序遍历根节点的左子树。2）后序遍历根节点的右子树。3）访问根节点。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 二分搜索树的后序遍历</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">postOrder</span><span class="params">()</span></span>&#123;</span><br><span class="line">	postOrder(root);</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// 后序遍历以node为根的二分搜索树, 递归算法</span></span><br><span class="line"><span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">postOrder</span><span class="params">(Node node)</span></span>&#123;</span><br><span class="line">	<span class="keyword">if</span>(node == <span class="keyword">null</span>)</span><br><span class="line">		<span class="keyword">return</span>;</span><br><span class="line">	postOrder(node.left);</span><br><span class="line">	postOrder(node.right);</span><br><span class="line">	System.out.println(node.e);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h5 id="层序遍历-广度优先遍历"><a href="#层序遍历-广度优先遍历" class="headerlink" title="层序遍历(广度优先遍历)"></a>层序遍历(广度优先遍历)</h5><p>利用队列的数据结构实现，步骤如下：</p>
+<p>1）将根节点入队列</p>
+<p>2）当队列不为空时，依次把队列中的节点出队列</p>
+<ol>
+<li>若该节点的左子树不为空，将该左子树的根节点入队列</li>
+<li>若该节点的右子树不为空，将该右子树的根节点入队列</li>
+</ol>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//二分搜索树的层序遍历</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">leveOrder</span><span class="params">()</span></span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(root == <span class="keyword">null</span>)</span><br><span class="line">        <span class="keyword">return</span>;</span><br><span class="line">    Queue&lt;Node&gt; q = <span class="keyword">new</span> LinkedList&lt;&gt;();</span><br><span class="line">    q.add(root);</span><br><span class="line">    <span class="keyword">while</span>(!q.isEmpty())&#123;</span><br><span class="line">        Node cur = q.remove();</span><br><span class="line">        System.out.println(cur.e);</span><br><span class="line">        <span class="keyword">if</span>(cur.left!= <span class="keyword">null</span>)</span><br><span class="line">            q.add(Cur.right);</span><br><span class="line">        <span class="keyword">if</span>(cur.right!=<span class="keyword">null</span>)</span><br><span class="line">            q.add(cur.right);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h4 id="删除元素"><a href="#删除元素" class="headerlink" title="删除元素"></a>删除元素</h4><h5 id="删除最小值所在节点"><a href="#删除最小值所在节点" class="headerlink" title="删除最小值所在节点"></a>删除最小值所在节点</h5><p>思想：根据二分搜索树的特性，我们知道节点的左孩子小于该节点（依次递归，找到最小值)</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 从二分搜索树中删除最小值所在节点, 返回最小值</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> E <span class="title">removeMin</span><span class="params">()</span></span>&#123;</span><br><span class="line">	<span class="comment">//寻找到二分搜索树中最小的元素</span></span><br><span class="line">    E ret = minimum();</span><br><span class="line">    root = removeMin(root);</span><br><span class="line">    <span class="keyword">return</span> ret;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 删除掉以node为根的二分搜索树中的最小节点</span></span><br><span class="line"><span class="comment">// 返回删除节点后新的二分搜索树的根</span></span><br><span class="line"><span class="function"><span class="keyword">private</span> Node <span class="title">removeMin</span><span class="params">(Node node)</span></span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">if</span>(node.left == <span class="keyword">null</span>)&#123;</span><br><span class="line">        Node rightNode = node.right;</span><br><span class="line">        node.right = <span class="keyword">null</span>;</span><br><span class="line">        size --;</span><br><span class="line">        <span class="keyword">return</span> rightNode;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    node.left = removeMin(node.left);</span><br><span class="line">    <span class="keyword">return</span> node;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h5 id="删除最大值所在节点"><a href="#删除最大值所在节点" class="headerlink" title="删除最大值所在节点"></a>删除最大值所在节点</h5><p>思想：根据二分搜索树的特性，我们知道节点的右孩子大于该节点（依次递归，找到最大值)</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 从二分搜索树中删除最大值所在节点</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> E <span class="title">removeMax</span><span class="params">()</span></span>&#123;</span><br><span class="line">    E ret = maximum();</span><br><span class="line">    root = removeMax(root);</span><br><span class="line">    <span class="keyword">return</span> ret;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 删除掉以node为根的二分搜索树中的最大节点</span></span><br><span class="line"><span class="comment">// 返回删除节点后新的二分搜索树的根</span></span><br><span class="line"><span class="function"><span class="keyword">private</span> Node <span class="title">removeMax</span><span class="params">(Node node)</span></span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">if</span>(node.right == <span class="keyword">null</span>)&#123;</span><br><span class="line">        Node leftNode = node.left;</span><br><span class="line">        node.left = <span class="keyword">null</span>;</span><br><span class="line">        size --;</span><br><span class="line">        <span class="keyword">return</span> leftNode;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    node.right = removeMax(node.right);</span><br><span class="line">    <span class="keyword">return</span> node;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h5 id="删除元素为e的节点"><a href="#删除元素为e的节点" class="headerlink" title="删除元素为e的节点"></a>删除元素为e的节点</h5><p>分为三种情况</p>
+<p>1）待删除元素的节点左子树为空</p>
+<p>2）待删除元素的节点右子树为空</p>
+<p>3）待删除元素的节点左右子树非空情况</p>
+<ul>
+<li>找到待删除节点的后继节点来代替</li>
+</ul>
+<p>Node successor = minimum(node.right);<br>        successor.right = removeMin(node.right);<br>        successor.left = node.left;</p>
+<p>node.left = node.right = null;</p>
+<ul>
+<li>找到待删除节点的前驱节点来代替</li>
+</ul>
+<p>Node precursor = maximum(node.left);</p>
+<p>precursor.left = removeMax(node.left);</p>
+<p>precursor.right = node.left;</p>
+<p>node.left = node.right = null;</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 从二分搜索树中删除元素为e的节点</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">remove</span><span class="params">(E e)</span></span>&#123;</span><br><span class="line">    root = remove(root, e);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 删除掉以node为根的二分搜索树中值为e的节点, 递归算法</span></span><br><span class="line"><span class="comment">// 返回删除节点后新的二分搜索树的根</span></span><br><span class="line"><span class="function"><span class="keyword">private</span> Node <span class="title">remove</span><span class="params">(Node node, E e)</span></span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">if</span>( node == <span class="keyword">null</span> )</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">null</span>;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">if</span>( e.compareTo(node.e) &lt; <span class="number">0</span> )&#123;</span><br><span class="line">        node.left = remove(node.left , e);</span><br><span class="line">        <span class="keyword">return</span> node;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">else</span> <span class="keyword">if</span>(e.compareTo(node.e) &gt; <span class="number">0</span> )&#123;</span><br><span class="line">        node.right = remove(node.right, e);</span><br><span class="line">        <span class="keyword">return</span> node;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">else</span>&#123;   <span class="comment">// e.compareTo(node.e) == 0</span></span><br><span class="line"></span><br><span class="line">        <span class="comment">// 待删除节点左子树为空的情况</span></span><br><span class="line">        <span class="keyword">if</span>(node.left == <span class="keyword">null</span>)&#123;</span><br><span class="line">            Node rightNode = node.right;</span><br><span class="line">            node.right = <span class="keyword">null</span>;</span><br><span class="line">            size --;</span><br><span class="line">            <span class="keyword">return</span> rightNode;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="comment">// 待删除节点右子树为空的情况</span></span><br><span class="line">        <span class="keyword">if</span>(node.right == <span class="keyword">null</span>)&#123;</span><br><span class="line">            Node leftNode = node.left;</span><br><span class="line">            node.left = <span class="keyword">null</span>;</span><br><span class="line">            size --;</span><br><span class="line">            <span class="keyword">return</span> leftNode;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="comment">// 待删除节点左右子树均不为空的情况</span></span><br><span class="line"></span><br><span class="line">        <span class="comment">// 找到比待删除节点大的最小节点, 即待删除节点右子树的最小节点</span></span><br><span class="line">        <span class="comment">// 用这个节点顶替待删除节点的位置</span></span><br><span class="line">        Node successor = minimum(node.right);</span><br><span class="line">        successor.right = removeMin(node.right);</span><br><span class="line">        successor.left = node.left;</span><br><span class="line"></span><br><span class="line">        node.left = node.right = <span class="keyword">null</span>;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">return</span> successor;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h4 id="二分搜索树的时间复杂度分析"><a href="#二分搜索树的时间复杂度分析" class="headerlink" title="二分搜索树的时间复杂度分析"></a>二分搜索树的时间复杂度分析</h4><p><img src="bst_pic1.png" alt></p>
+<p>添加操作：add(E e)：O(logn)</p>
+<p>删除操作：remove(E e)：O(logn)</p>
+<p>查询操作：contains(E e)：O(logn)</p>
+<h4 id="二分搜索树的顺序性"><a href="#二分搜索树的顺序性" class="headerlink" title="二分搜索树的顺序性"></a>二分搜索树的顺序性</h4><p>二分搜索树当做查找表的一种实现。我们使用二分搜索树的目的是通过查找 key 马上得到 value。</p>
+<p>二分搜索树还能回答哪些问题呢？这些问题都和顺序相关。</p>
+<p>minimum，maximum</p>
+<p>successor，predecessor（这两个元素在二分搜索树的 key 中必须存在）</p>
+<p>floor（地板），ceil（天花板）（这两个元素在二分搜索树的 key 中可以存在，也可以不存在）</p>
+<p>rank（58 是排名第几的元素）、select（排名第10的元素是谁）</p>
+<p>在有些情况下，我们须要支持重复元素的二分搜索树。</p>
+<h4 id="二分搜索树的局限性"><a href="#二分搜索树的局限性" class="headerlink" title="二分搜索树的局限性"></a>二分搜索树的局限性</h4><p>二分搜索树可能会退化成链表。而通过对二分搜索树的时间复杂度分析，二分搜索树的查找过程是跟其高度有关的。</p>
+<p>为了解决此问题，可以改造二叉树的实现，使得其无法退化成链表—–平衡二叉树，它有左右两棵子树，并且其高度差不会超过1，因此可以保证其高度一定是 logn 级别的，此概念的经典实现就是<strong>红黑树</strong>。</p>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+      <div>
+        <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+  <div>你可以对我打赏哦</div>
+  <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+    <span>打赏</span>
+  </button>
+  <div id="QR" style="display: none;">
+
+    
+      <div id="wechat" style="display: inline-block">
+        <img id="wechat_qr" src="/images/wechatpay.jpg" alt="Lipstick 微信支付">
+        <p>微信支付</p>
+      </div>
+    
+
+    
+      <div id="alipay" style="display: inline-block">
+        <img id="alipay_qr" src="/images/alipay.jpg" alt="Lipstick 支付宝">
+        <p>支付宝</p>
+      </div>
+    
+
+    
+
+  </div>
+</div>
+
+      </div>
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/java/" rel="tag"># java</a>
+          
+            <a href="/tags/面试题/" rel="tag"># 面试题</a>
+          
+            <a href="/tags/二分搜索树/" rel="tag"># 二分搜索树</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2019/06/24/数据结构之链表/" rel="next" title="数据结构之链表">
+                <i class="fa fa-chevron-left"></i> 数据结构之链表
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+        <!-- JiaThis Button BEGIN -->
+<div class="jiathis_style">
+<span class="jiathis_txt">分享到：</span>
+<a class="jiathis_button_fav">收藏夹</a>
+<a class="jiathis_button_copy">复制网址</a>
+<a class="jiathis_button_email">邮件</a>
+<a class="jiathis_button_weixin">微信</a>
+<a class="jiathis_button_qzone">QQ空间</a>
+<a class="jiathis_button_tqq">腾讯微博</a>
+<a class="jiathis_button_douban">豆瓣</a>
+<a class="jiathis_button_share">一键分享</a>
+
+<a href="http://www.jiathis.com/share?uid=2140465" class="jiathis jiathis_txt jiathis_separator jtico jtico_jiathis" target="_blank">更多</a>
+<a class="jiathis_counter_style"></a>
+</div>
+<script type="text/javascript">
+var jiathis_config={
+  data_track_clickback:true,
+  summary:"",
+  shortUrl:false,
+  hideMore:false
+}
+</script>
+<script type="text/javascript" src="http://v3.jiathis.com/code/jia.js?uid=" charset="utf-8"></script>
+<!-- JiaThis Button END -->
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+    <div class="comments" id="comments">
+      
+        <div id="gitment-container"></div>
+      
+    </div>
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image" src="/images/picture.jpg" alt="Lipstick">
+            
+              <p class="site-author-name" itemprop="name">Lipstick</p>
+              <p class="site-description motion-element" itemprop="description">这是一个个人博客，该博客主要是个人的一个知识积累，学习的一个网站</p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">3</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">1</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">5</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/lipstick999" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-github"></i>GitHub</a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#为什么要有树结构"><span class="nav-number">1.</span> <span class="nav-text">为什么要有树结构</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#二叉树"><span class="nav-number">2.</span> <span class="nav-text">二叉树</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#二分搜索树BST"><span class="nav-number">3.</span> <span class="nav-text">二分搜索树BST</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#特性"><span class="nav-number">3.1.</span> <span class="nav-text">特性</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#添加新元素"><span class="nav-number">3.2.</span> <span class="nav-text">添加新元素</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#查询元素"><span class="nav-number">3.3.</span> <span class="nav-text">查询元素</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#遍历"><span class="nav-number">3.4.</span> <span class="nav-text">遍历</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#前序遍历："><span class="nav-number">3.4.1.</span> <span class="nav-text">前序遍历：</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#中序遍历"><span class="nav-number">3.4.2.</span> <span class="nav-text">中序遍历</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#后序遍历"><span class="nav-number">3.4.3.</span> <span class="nav-text">后序遍历</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#层序遍历-广度优先遍历"><span class="nav-number">3.4.4.</span> <span class="nav-text">层序遍历(广度优先遍历)</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#删除元素"><span class="nav-number">3.5.</span> <span class="nav-text">删除元素</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#删除最小值所在节点"><span class="nav-number">3.5.1.</span> <span class="nav-text">删除最小值所在节点</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#删除最大值所在节点"><span class="nav-number">3.5.2.</span> <span class="nav-text">删除最大值所在节点</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#删除元素为e的节点"><span class="nav-number">3.5.3.</span> <span class="nav-text">删除元素为e的节点</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#二分搜索树的时间复杂度分析"><span class="nav-number">3.6.</span> <span class="nav-text">二分搜索树的时间复杂度分析</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#二分搜索树的顺序性"><span class="nav-number">3.7.</span> <span class="nav-text">二分搜索树的顺序性</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#二分搜索树的局限性"><span class="nav-number">3.8.</span> <span class="nav-text">二分搜索树的局限性</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Lipstick</span>
+
+  
+</div>
+
+<!--
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Gemini</a> v5.1.4</div>
+-->
+
+
+
+        
+<div class="busuanzi-count">
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  
+    <span class="site-uv">
+      本站访问数 <i class="fa fa-user"></i>
+      <span class="busuanzi-value" id="busuanzi_value_site_uv"></span>
+      人数
+    </span>
+  
+
+  
+    <span class="site-pv">
+      本站总访问量 <i class="fa fa-eye"></i>
+      <span class="busuanzi-value" id="busuanzi_value_site_pv"></span>
+      次
+    </span>
+  
+</div>
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/canvas-nest/canvas-nest.min.js"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+<!-- LOCAL: You can save these files to your site and update links -->
+    
+        
+        <link rel="stylesheet" href="https://aimingoo.github.io/gitmint/style/default.css">
+        <script src="https://aimingoo.github.io/gitmint/dist/gitmint.browser.js"></script>
+    
+<!-- END LOCAL -->
+
+    
+
+    
+      <script type="text/javascript">
+      function renderGitment(){
+        var gitment = new Gitmint({
+            id: window.location.pathname, 
+            owner: 'lipstick999',
+            repo: 'blogcomments',
+            
+            lang: "" || navigator.language || navigator.systemLanguage || navigator.userLanguage,
+            
+            oauth: {
+            
+            
+                client_secret: '76b33786509c6c403988b9276fb7395a7bc1c0bb',
+            
+                client_id: 'd520f9897873d4257e9d'
+            }});
+        gitment.render('gitment-container');
+      }
+
+      
+      renderGitment();
+      
+      </script>
+    
+
+
+
+
+
+
+
+  
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "srach.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url);
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
