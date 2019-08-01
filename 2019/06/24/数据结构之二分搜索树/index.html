@@ -95,7 +95,7 @@
 <meta property="og:description" content="为什么要有树结构树结构本身是一种天然的组织结构。将数据使用数结构存储后，会很高效 二叉树特性：  二叉树和链表一样，是动态数据结构。 二叉树具有唯一根节点。每个节点最多有两个孩子，最多有一个父亲。 二叉树具有天然的递归结构。  满二叉树：在一棵二叉树中，如果所有分支节点都存在左子树和右子树，并且所有叶子节点都在同一层上。这样的二叉树称作满二叉树。 完全二叉树：如果一个具有n个节点的二叉树与满二叉树">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="http://yoursite.com/2019/06/24/数据结构之二分搜索树/bst_pic1.png">
-<meta property="og:updated_time" content="2019-06-24T10:59:04.078Z">
+<meta property="og:updated_time" content="2019-08-01T03:20:21.533Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="数据结构之二分搜索树">
 <meta name="twitter:description" content="为什么要有树结构树结构本身是一种天然的组织结构。将数据使用数结构存储后，会很高效 二叉树特性：  二叉树和链表一样，是动态数据结构。 二叉树具有唯一根节点。每个节点最多有两个孩子，最多有一个父亲。 二叉树具有天然的递归结构。  满二叉树：在一棵二叉树中，如果所有分支节点都存在左子树和右子树，并且所有叶子节点都在同一层上。这样的二叉树称作满二叉树。 完全二叉树：如果一个具有n个节点的二叉树与满二叉树">
@@ -491,7 +491,7 @@
 <li>若该节点的左子树不为空，将该左子树的根节点入队列</li>
 <li>若该节点的右子树不为空，将该右子树的根节点入队列</li>
 </ol>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//二分搜索树的层序遍历</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">leveOrder</span><span class="params">()</span></span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(root == <span class="keyword">null</span>)</span><br><span class="line">        <span class="keyword">return</span>;</span><br><span class="line">    Queue&lt;Node&gt; q = <span class="keyword">new</span> LinkedList&lt;&gt;();</span><br><span class="line">    q.add(root);</span><br><span class="line">    <span class="keyword">while</span>(!q.isEmpty())&#123;</span><br><span class="line">        Node cur = q.remove();</span><br><span class="line">        System.out.println(cur.e);</span><br><span class="line">        <span class="keyword">if</span>(cur.left!= <span class="keyword">null</span>)</span><br><span class="line">            q.add(Cur.right);</span><br><span class="line">        <span class="keyword">if</span>(cur.right!=<span class="keyword">null</span>)</span><br><span class="line">            q.add(cur.right);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//二分搜索树的层序遍历</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">leveOrder</span><span class="params">()</span></span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(root == <span class="keyword">null</span>)</span><br><span class="line">        <span class="keyword">return</span>;</span><br><span class="line">    Queue&lt;Node&gt; q = <span class="keyword">new</span> LinkedList&lt;&gt;();</span><br><span class="line">    q.add(root);</span><br><span class="line">    <span class="keyword">while</span>(!q.isEmpty())&#123;</span><br><span class="line">        Node cur = q.remove();</span><br><span class="line">        System.out.println(cur.e);</span><br><span class="line">        <span class="keyword">if</span>(cur.left!= <span class="keyword">null</span>)</span><br><span class="line">            q.add(cur.left);</span><br><span class="line">        <span class="keyword">if</span>(cur.right!=<span class="keyword">null</span>)</span><br><span class="line">            q.add(cur.right);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 <h4 id="删除元素"><a href="#删除元素" class="headerlink" title="删除元素"></a>删除元素</h4><h5 id="删除最小值所在节点"><a href="#删除最小值所在节点" class="headerlink" title="删除最小值所在节点"></a>删除最小值所在节点</h5><p>思想：根据二分搜索树的特性，我们知道节点的左孩子小于该节点（依次递归，找到最小值)</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 从二分搜索树中删除最小值所在节点, 返回最小值</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> E <span class="title">removeMin</span><span class="params">()</span></span>&#123;</span><br><span class="line">	<span class="comment">//寻找到二分搜索树中最小的元素</span></span><br><span class="line">    E ret = minimum();</span><br><span class="line">    root = removeMin(root);</span><br><span class="line">    <span class="keyword">return</span> ret;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 删除掉以node为根的二分搜索树中的最小节点</span></span><br><span class="line"><span class="comment">// 返回删除节点后新的二分搜索树的根</span></span><br><span class="line"><span class="function"><span class="keyword">private</span> Node <span class="title">removeMin</span><span class="params">(Node node)</span></span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">if</span>(node.left == <span class="keyword">null</span>)&#123;</span><br><span class="line">        Node rightNode = node.right;</span><br><span class="line">        node.right = <span class="keyword">null</span>;</span><br><span class="line">        size --;</span><br><span class="line">        <span class="keyword">return</span> rightNode;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    node.left = removeMin(node.left);</span><br><span class="line">    <span class="keyword">return</span> node;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
@@ -603,8 +603,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2019/06/24/二叉堆/" rel="prev" title="二叉堆">
-                二叉堆 <i class="fa fa-chevron-right"></i>
+              <a href="/2019/06/24/数据结构之栈/" rel="prev" title="数据结构之栈">
+                数据结构之栈 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -717,7 +717,7 @@ var jiathis_config={
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">6</span>
+                  <span class="site-state-item-count">7</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -739,7 +739,7 @@ var jiathis_config={
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">7</span>
+                  <span class="site-state-item-count">9</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>

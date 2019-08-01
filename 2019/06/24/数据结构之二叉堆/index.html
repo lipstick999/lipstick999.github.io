@@ -75,7 +75,7 @@
 
 
 
-  <meta name="keywords" content="Hexo, NexT">
+  <meta name="keywords" content="堆,java,面试题,">
 
 
 
@@ -86,17 +86,20 @@
 
 
 
-<meta name="description" content="这是一个个人博客，该博客主要是个人的一个知识积累，学习的一个网站">
-<meta property="og:type" content="website">
-<meta property="og:title" content="标签">
-<meta property="og:url" content="http://yoursite.com/tags/index.html">
+<meta name="description" content="什么是二叉堆二叉堆是一种特殊的堆，二叉堆具有堆的性质（父节点的键值总是大于或等于（小于或等于）任何一个子节点的键值），二叉堆又具有二叉树的性质（二叉堆是完全二叉树或者是近似完全二叉树）。当父节点的键值大于或等于（小于或等于）它的每一个子节点的键值时我们称它为最大堆（最小堆）。 完全二叉树：简单理解就是把元素顺序排列成树的形状。 二叉堆底层实现二叉堆多数是以数组作为它们底层元素的存储。  12345">
+<meta name="keywords" content="堆,java,面试题">
+<meta property="og:type" content="article">
+<meta property="og:title" content="数据结构之二叉堆">
+<meta property="og:url" content="http://yoursite.com/2019/06/24/数据结构之二叉堆/index.html">
 <meta property="og:site_name" content="Lipstick">
-<meta property="og:description" content="这是一个个人博客，该博客主要是个人的一个知识积累，学习的一个网站">
+<meta property="og:description" content="什么是二叉堆二叉堆是一种特殊的堆，二叉堆具有堆的性质（父节点的键值总是大于或等于（小于或等于）任何一个子节点的键值），二叉堆又具有二叉树的性质（二叉堆是完全二叉树或者是近似完全二叉树）。当父节点的键值大于或等于（小于或等于）它的每一个子节点的键值时我们称它为最大堆（最小堆）。 完全二叉树：简单理解就是把元素顺序排列成树的形状。 二叉堆底层实现二叉堆多数是以数组作为它们底层元素的存储。  12345">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-06-16T00:53:59.585Z">
+<meta property="og:image" content="http://yoursite.com/2019/06/24/数据结构之二叉堆/heap_pic1.png">
+<meta property="og:updated_time" content="2019-06-24T13:43:55.699Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="标签">
-<meta name="twitter:description" content="这是一个个人博客，该博客主要是个人的一个知识积累，学习的一个网站">
+<meta name="twitter:title" content="数据结构之二叉堆">
+<meta name="twitter:description" content="什么是二叉堆二叉堆是一种特殊的堆，二叉堆具有堆的性质（父节点的键值总是大于或等于（小于或等于）任何一个子节点的键值），二叉堆又具有二叉树的性质（二叉堆是完全二叉树或者是近似完全二叉树）。当父节点的键值大于或等于（小于或等于）它的每一个子节点的键值时我们称它为最大堆（最小堆）。 完全二叉树：简单理解就是把元素顺序排列成树的形状。 二叉堆底层实现二叉堆多数是以数组作为它们底层元素的存储。  12345">
+<meta name="twitter:image" content="http://yoursite.com/2019/06/24/数据结构之二叉堆/heap_pic1.png">
 
 
 
@@ -126,13 +129,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/tags/">
+  <link rel="canonical" href="http://yoursite.com/2019/06/24/数据结构之二叉堆/">
 
 
 
 
 
-  <title>标签 | Lipstick</title>
+  <title>数据结构之二叉堆 | Lipstick</title>
   
 
 
@@ -281,40 +284,280 @@
 
   <div id="posts" class="posts-expand">
     
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/06/24/数据结构之二叉堆/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Lipstick">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/picture.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Lipstick">
+    </span>
+
     
-    
-    <div class="post-block page">
       <header class="post-header">
 
-	<h1 class="post-title" itemprop="name headline">标签</h1>
-
-
-
-</header>
-
-      
-      
-      
-      <div class="post-body">
         
         
-          <div class="tag-cloud">
-            <div class="tag-cloud-title">
-                目前共计 9 个标签
+          <h1 class="post-title" itemprop="name headline">数据结构之二叉堆</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-06-24T21:10:49+08:00">
+                2019-06-24
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/数据结构/" itemprop="url" rel="index">
+                    <span itemprop="name">数据结构</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2019/06/24/数据结构之二叉堆/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count gitment-comments-count" data-xid="/2019/06/24/数据结构之二叉堆/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+            <span class="post-meta-divider">|</span>
+            <span class="page-pv">本文总阅读数 <i class="fa fa-file-o"></i>
+            <span class="busuanzi-value" id="busuanzi_value_page_pv"></span>次
+            </span>
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  660
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  3
+                </span>
+              
             </div>
-            <div class="tag-cloud-tags">
-              <a href="/tags/java/" style="font-size: 30px; color: #111">java</a> <a href="/tags/二分搜索树/" style="font-size: 12px; color: #ccc">二分搜索树</a> <a href="/tags/动态数组/" style="font-size: 12px; color: #ccc">动态数组</a> <a href="/tags/堆/" style="font-size: 12px; color: #ccc">堆</a> <a href="/tags/并查集/" style="font-size: 12px; color: #ccc">并查集</a> <a href="/tags/栈/" style="font-size: 12px; color: #ccc">栈</a> <a href="/tags/链表/" style="font-size: 12px; color: #ccc">链表</a> <a href="/tags/队列/" style="font-size: 12px; color: #ccc">队列</a> <a href="/tags/面试题/" style="font-size: 30px; color: #111">面试题</a>
-            </div>
-          </div>
-        
-      </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
       
       
+
+      
+        <h4 id="什么是二叉堆"><a href="#什么是二叉堆" class="headerlink" title="什么是二叉堆"></a>什么是二叉堆</h4><p>二叉堆是一种特殊的堆，二叉堆具有堆的性质（父节点的键值总是大于或等于（小于或等于）任何一个子节点的键值），二叉堆又具有二叉树的性质（二叉堆是完全二叉树或者是近似完全二叉树）。当父节点的键值大于或等于（小于或等于）它的每一个子节点的键值时我们称它为最大堆（最小堆）。</p>
+<p>完全二叉树：简单理解就是把元素顺序排列成树的形状。</p>
+<h4 id="二叉堆底层实现"><a href="#二叉堆底层实现" class="headerlink" title="二叉堆底层实现"></a>二叉堆底层实现</h4><p>二叉堆多数是以数组作为它们底层元素的存储。</p>
+<p><img src="heap_pic1.png" alt></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">MaxHeap</span>&lt;<span class="title">E</span> <span class="keyword">extends</span> <span class="title">Comparable</span>&lt;<span class="title">E</span>&gt;&gt; </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">private</span> Array&lt;E&gt; data;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">MaxHeap</span><span class="params">(<span class="keyword">int</span> capacity)</span></span>&#123;</span><br><span class="line">        data = <span class="keyword">new</span> Array&lt;&gt;(capacity);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">MaxHeap</span><span class="params">()</span></span>&#123;</span><br><span class="line">        data = <span class="keyword">new</span> Array&lt;&gt;();</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">MaxHeap</span><span class="params">(E[] arr)</span></span>&#123;</span><br><span class="line">        data = <span class="keyword">new</span> Array&lt;&gt;(arr);</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i = parent(arr.length - <span class="number">1</span>) ; i &gt;= <span class="number">0</span> ; i --)</span><br><span class="line">            siftDown(i);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 返回堆中的元素个数</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">size</span><span class="params">()</span></span>&#123;</span><br><span class="line">        <span class="keyword">return</span> data.getSize();</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 返回一个布尔值, 表示堆中是否为空</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">isEmpty</span><span class="params">()</span></span>&#123;</span><br><span class="line">        <span class="keyword">return</span> data.isEmpty();</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 返回完全二叉树的数组表示中，一个索引所表示的元素的父亲节点的索引</span></span><br><span class="line">    <span class="function"><span class="keyword">private</span> <span class="keyword">int</span> <span class="title">parent</span><span class="params">(<span class="keyword">int</span> index)</span></span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(index == <span class="number">0</span>)</span><br><span class="line">            <span class="keyword">throw</span> <span class="keyword">new</span> IllegalArgumentException(<span class="string">"index-0 doesn't have parent."</span>);</span><br><span class="line">        <span class="keyword">return</span> (index - <span class="number">1</span>) / <span class="number">2</span>;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 返回完全二叉树的数组表示中，一个索引所表示的元素的左孩子节点的索引</span></span><br><span class="line">    <span class="function"><span class="keyword">private</span> <span class="keyword">int</span> <span class="title">leftChild</span><span class="params">(<span class="keyword">int</span> index)</span></span>&#123;</span><br><span class="line">        <span class="keyword">return</span> index * <span class="number">2</span> + <span class="number">1</span>;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 返回完全二叉树的数组表示中，一个索引所表示的元素的右孩子节点的索引</span></span><br><span class="line">    <span class="function"><span class="keyword">private</span> <span class="keyword">int</span> <span class="title">rightChild</span><span class="params">(<span class="keyword">int</span> index)</span></span>&#123;</span><br><span class="line">        <span class="keyword">return</span> index * <span class="number">2</span> + <span class="number">2</span>;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 向堆中添加元素</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">add</span><span class="params">(E e)</span></span>&#123;</span><br><span class="line">        data.addLast(e);</span><br><span class="line">        siftUp(data.getSize() - <span class="number">1</span>);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">//节点上浮操作</span></span><br><span class="line">    <span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">siftUp</span><span class="params">(<span class="keyword">int</span> k)</span></span>&#123;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">while</span>(k &gt; <span class="number">0</span> &amp;&amp; data.get(parent(k)).compareTo(data.get(k)) &lt; <span class="number">0</span> )&#123;</span><br><span class="line">            data.swap(k, parent(k));</span><br><span class="line">            k = parent(k);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 看堆中的最大元素</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> E <span class="title">findMax</span><span class="params">()</span></span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(data.getSize() == <span class="number">0</span>)</span><br><span class="line">            <span class="keyword">throw</span> <span class="keyword">new</span> IllegalArgumentException(<span class="string">"Can not findMax when heap is empty."</span>);</span><br><span class="line">        <span class="keyword">return</span> data.get(<span class="number">0</span>);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 取出堆中最大元素</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> E <span class="title">extractMax</span><span class="params">()</span></span>&#123;</span><br><span class="line"></span><br><span class="line">        E ret = findMax();</span><br><span class="line"></span><br><span class="line">        data.swap(<span class="number">0</span>, data.getSize() - <span class="number">1</span>);</span><br><span class="line">        data.removeLast();</span><br><span class="line">        siftDown(<span class="number">0</span>);</span><br><span class="line"></span><br><span class="line">        <span class="keyword">return</span> ret;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">//节点下沉操作</span></span><br><span class="line">    <span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">siftDown</span><span class="params">(<span class="keyword">int</span> k)</span></span>&#123;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">while</span>(leftChild(k) &lt; data.getSize())&#123;</span><br><span class="line">            <span class="keyword">int</span> j = leftChild(k); <span class="comment">// 在此轮循环中,data[k]和data[j]交换位置</span></span><br><span class="line">            <span class="keyword">if</span>( j + <span class="number">1</span> &lt; data.getSize() &amp;&amp;</span><br><span class="line">                    data.get(j + <span class="number">1</span>).compareTo(data.get(j)) &gt; <span class="number">0</span> )</span><br><span class="line">                j ++;</span><br><span class="line">            <span class="comment">// data[j] 是 leftChild 和 rightChild 中的最大值</span></span><br><span class="line"></span><br><span class="line">            <span class="keyword">if</span>(data.get(k).compareTo(data.get(j)) &gt;= <span class="number">0</span> )</span><br><span class="line">                <span class="keyword">break</span>;</span><br><span class="line"></span><br><span class="line">            data.swap(k, j);</span><br><span class="line">            k = j;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 取出堆中的最大元素，并且替换成元素e</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> E <span class="title">replace</span><span class="params">(E e)</span></span>&#123;</span><br><span class="line"></span><br><span class="line">        E ret = findMax();</span><br><span class="line">        data.set(<span class="number">0</span>, e);</span><br><span class="line">        siftDown(<span class="number">0</span>);</span><br><span class="line">        <span class="keyword">return</span> ret;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
       
     </div>
     
     
     
+
+    
+
+    
+      <div>
+        <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+  <div>你可以对我打赏哦</div>
+  <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+    <span>打赏</span>
+  </button>
+  <div id="QR" style="display: none;">
+
+    
+      <div id="wechat" style="display: inline-block">
+        <img id="wechat_qr" src="/images/wechatpay.jpg" alt="Lipstick 微信支付">
+        <p>微信支付</p>
+      </div>
+    
+
+    
+      <div id="alipay" style="display: inline-block">
+        <img id="alipay_qr" src="/images/alipay.jpg" alt="Lipstick 支付宝">
+        <p>支付宝</p>
+      </div>
+    
+
+    
+
+  </div>
+</div>
+
+      </div>
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/堆/" rel="tag"># 堆</a>
+          
+            <a href="/tags/java/" rel="tag"># java</a>
+          
+            <a href="/tags/面试题/" rel="tag"># 面试题</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2019/06/24/数据结构之队列/" rel="next" title="数据结构之队列">
+                <i class="fa fa-chevron-left"></i> 数据结构之队列
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2019/06/26/数据结构之并查集/" rel="prev" title="数据结构之并查集">
+                数据结构之并查集 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+        <!-- JiaThis Button BEGIN -->
+<div class="jiathis_style">
+<span class="jiathis_txt">分享到：</span>
+<a class="jiathis_button_fav">收藏夹</a>
+<a class="jiathis_button_copy">复制网址</a>
+<a class="jiathis_button_email">邮件</a>
+<a class="jiathis_button_weixin">微信</a>
+<a class="jiathis_button_qzone">QQ空间</a>
+<a class="jiathis_button_tqq">腾讯微博</a>
+<a class="jiathis_button_douban">豆瓣</a>
+<a class="jiathis_button_share">一键分享</a>
+
+<a href="http://www.jiathis.com/share?uid=2140465" class="jiathis jiathis_txt jiathis_separator jtico jtico_jiathis" target="_blank">更多</a>
+<a class="jiathis_counter_style"></a>
+</div>
+<script type="text/javascript">
+var jiathis_config={
+  data_track_clickback:true,
+  summary:"",
+  shortUrl:false,
+  hideMore:false
+}
+</script>
+<script type="text/javascript" src="http://v3.jiathis.com/code/jia.js?uid=" charset="utf-8"></script>
+<!-- JiaThis Button END -->
+      
+    </div>
   </div>
 
 
@@ -354,8 +597,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -427,6 +679,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#什么是二叉堆"><span class="nav-number">1.</span> <span class="nav-text">什么是二叉堆</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#二叉堆底层实现"><span class="nav-number">2.</span> <span class="nav-text">二叉堆底层实现</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
